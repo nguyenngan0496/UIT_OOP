@@ -1,0 +1,10 @@
+#include "CNgay.h"
+
+using namespace std;
+
+int main()
+{
+    CNgay ngay;
+    cout << "Nhap vao mot ngay: \n";
+    cin 
+}
