@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+class CSoPhuc
+{
+private:
+    int thuc, ao;
+public:
+    //toan tu nhap
+    friend istream& operator>>(istream& is, CSoPhuc& sp);
+    friend ostream& operator<<(ostream& os, CSoPhuc& sp);
+};
+
+int main()
+{
+    CSoPhuc a;
+    cin >> a;
+    cout << "So phuc vua nhap la: " << a;
+
+    return 0;
+}
+
+istream& operator>>(istream& is, CSoPhuc& sp)
+{
+    cout << "Nhap phan thuc: ";
+    is >> sp.thuc;
+    cout << "Nhap phan ao: ";
+    is >> sp.ao;
+
+    return is;
+}
+
+ostream& operator<<(ostream& os, CSoPhuc& sp)
+{
+    os << sp.thuc;
+    if (sp.ao >= 0)
+    {
+        os << " + " << sp.ao << "i\n";
+    }
+    else
+    {
+        os << " - " << sp.ao << "i\n";
+    }
+    return os;
